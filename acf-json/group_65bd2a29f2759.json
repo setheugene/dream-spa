@@ -1,0 +1,45 @@
+{
+    "key": "group_65bd2a29f2759",
+    "title": "Component : Treatment Archive",
+    "fields": [
+        {
+            "key": "field_65ca1742d38de",
+            "label": "Treatment Archive Instructions",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "message": "This component will pull in all treatments that are set up on the main site.\r\nTo set the icons, section titles, and category descriptions:\r\nGo to Treatments, Categories, and select the category you want to edit.\r\nParent categories get Icon and Title.\r\nChild categories are sub categories.\r\nGrandchild categories are the cards that will show description and locations.\r\nThe locations on the cards are selected on each sites individual treatments.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "component",
+                "operator": "==",
+                "value": "treatment-archive"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 1,
+    "modified": 1707743218
+}

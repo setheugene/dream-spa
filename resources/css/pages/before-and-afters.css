@@ -1,0 +1,117 @@
+.bag_single-h1.bag-col.bag-text-2xl.bag-mb-5 {
+  font-family: theme(fontFamily.serif);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  color: theme(colors.brand.navy);
+}
+.bag_sidebar-heading {
+  font-family: theme(fontFamily.sans);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  color: theme(colors.brand.navy);
+}
+.bag_sidebar-details.bag-mt-3.bag-text-sm {
+  font-family: theme(fontFamily.sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: theme(colors.brand.gray);
+}
+.bag-whitespace-nowrap.bag-border.bag-border-black.bag-rounded-full.bag-p-3.bag-text-sm.bag-inline-block {
+  @apply relative inline-block font-medium duration-300 ease-in-out paragraph-default;
+  text-transform: capitalize;
+  border-radius: 1px;
+  padding: 16px 24px 16px 56px;
+  display: inline-block;
+  width: fit-content;
+  background-color: theme(colors.brand.teal);
+  color: theme(colors.white);
+  border: 1px solid theme(colors.brand.teal);
+
+  &::before {
+    content: "";
+    left: 24px;
+    top: 18px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../assets/img/arrow-right-long-white.svg');
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: theme(colors.brand.dark-teal);
+    border-color: theme(colors.brand.dark-teal);
+  }
+}
+.bag_navigation-wrapper {
+  .next .bag_arrow-right-dark {
+    background-image: url('../../assets/img/chevron-right.svg');
+    transition: all .3s;
+  }
+  .prev .bag_arrow-left-dark {
+    background-image: url('../../assets/img/chevron-right.svg');
+    transform: rotate(180deg);
+    transition: all .3s;
+  }
+  a {
+    @apply paragraph-default;
+    color: theme(colors.brand.teal);
+    &:hover {
+      text-decoration: none;
+      .bag_arrow-right-dark {
+        transform: translateX(8px);
+      }
+      .bag_arrow-left-dark {
+        transform: translateX(-8px) rotate(180deg);
+      }
+    }
+  }
+}
+.bag_back-text.bag-inline-block {
+  color: theme(colors.brand.teal);
+  padding-left: 32px;
+  &::before {
+    content: "";
+    left: 0;
+    top: 1px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../assets/img/arrow-left-long-teal.svg');
+    transition: all .3s;
+  }
+  &:hover {
+    text-decoration: none;
+    &::before {
+      transform: translateX(-8px);
+    }
+  }
+}
+.bag_filter-dropdown input {
+  accent-color: theme(colors.brand.teal);
+}
+button.bag_pill-btn {
+  background-color: theme(colors.brand.off-white);
+  color: theme(colors.brand.navy);
+  &::after {
+    color: theme(colors.brand.navy);
+    top: 12px;
+  }
+  &:hover {
+    background-color: theme(colors.brand.teal);
+    color: theme(colors.white);
+    &::after {
+      color: theme(colors.white);
+    }
+  }
+}

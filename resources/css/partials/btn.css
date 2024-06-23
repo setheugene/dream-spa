@@ -1,0 +1,152 @@
+.btn {
+  @apply relative inline-block font-medium duration-300 ease-in-out paragraph-default;
+}
+
+.primary-btn {
+  @extend .btn;
+  border-radius: 1px;
+  padding: 16px 24px;
+  display: inline-block;
+  width: fit-content;
+
+  svg {
+    transition: all .3s;
+    display: inline-block;
+  }
+
+  &.teal {
+    background-color: theme(colors.brand.teal);
+    color: theme(colors.white);
+    border: 1px solid theme(colors.brand.teal);
+
+    svg {
+      color: theme(colors.white);
+    }
+
+    &:hover {
+      background-color: theme(colors.brand.dark-teal);
+      border-color: theme(colors.brand.dark-teal);
+    }
+  }
+
+  &.dark-teal {
+    background-color: theme(colors.brand.dark-teal);
+    color: theme(colors.white);
+    border: 1px solid theme(colors.brand.dark-teal);
+
+    svg {
+      color: theme(colors.white);
+    }
+
+    &:hover {
+      background-color: theme(colors.brand.teal);
+      border-color: theme(colors.brand.teal);
+    }
+  }
+
+  &.glass {
+    color: theme(colors.brand.off-white);
+    border: 1px solid theme(colors.brand.off-white);
+    background: rgba(249, 249, 249, 0.20);
+    backdrop-filter: blur(5px);
+
+    svg {
+      color: theme(colors.brand.off-white);
+    }
+
+    &:hover {
+      background-color: theme(colors.brand.off-white);
+      color: theme(colors.brand.teal);
+
+      svg {
+        color: theme(colors.brand.teal);
+      }
+    }
+  }
+
+  &.ghost {
+    color: theme(colors.brand.teal);
+    border: 1px solid theme(colors.brand.teal);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(5px);
+      z-index: -1;
+    }
+
+    svg {
+      color: theme(colors.brand.teal);
+    }
+
+    &:hover {
+      background-color: theme(colors.brand.teal);
+      color: theme(colors.brand.off-white);
+
+      svg {
+        color: theme(colors.brand.off-white);
+      }
+    }
+  }
+}
+
+.secondary-btn {
+  @extend .btn;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .3s;
+  }
+
+  &.white {
+    color: theme(colors.brand.off-white);
+
+    &::after {
+      background-color: theme(colors.brand.off-white);
+    }
+  }
+
+  &.teal {
+    color: theme(colors.brand.teal);
+
+    &::after {
+      background-color: theme(colors.brand.teal);
+    }
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.wysiwyg .btn {
+  @apply mt-8;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 32px;
+
+  &[style*="text-align: center"] {
+    justify-content: center;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    &:not([class=*"mb-"]) {
+      margin-bottom: 0;
+    }
+  }
+}

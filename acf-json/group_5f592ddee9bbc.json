@@ -1,0 +1,51 @@
+{
+    "key": "group_5f592ddee9bbc",
+    "title": "Utility : Background Color",
+    "fields": [
+        {
+            "key": "field_5f592de5bfade",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "choices": {
+                "bg-white": "<div style=\"color: black !important; padding: 8px 12px;\" class=\"flex items-end justify-center border font-xs\">White<\/div>",
+                "bg-brand-off-white": "<div style=\"color: black !important; padding: 8px 12px; background-color: #F9F9F9;\" class=\"flex items-end justify-center border font-xs\">Off-White<\/div>",
+                "bg-brand-dark-teal": "<div style=\"color: white !important; padding: 8px 12px; background-color: #0B3B4A;\" class=\"flex items-end justify-center border font-xs\">Deep Teal<\/div>"
+            },
+            "default_value": "bg-white",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 0,
+    "modified": 1705351761
+}

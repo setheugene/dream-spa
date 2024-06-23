@@ -1,0 +1,39 @@
+/**
+ * Stats Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.stats {
+  .stats__row {
+    transition: 1.3s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    transform: translateX(-50%);
+    opacity: 0;
+
+    &.js-animated {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .stats-row__bg-color {
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: theme(colors.brand.teal);
+      width: calc(100% - 2rem);
+      left: 1rem;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      height: calc(100% - 4px);
+      top: 2px;
+
+      @screen xl {
+        height: 100%;
+        top: 0;
+      }
+    }
+  }
+}

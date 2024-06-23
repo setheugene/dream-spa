@@ -1,0 +1,155 @@
+/*
+ * navbar base styles are using plain css with some tailwind
+ * sprinkled in. @apply tailwind utilities for theme specifics
+ * like font sizes, colors, and even spacings as necessary. The
+ * rest we will just do in plain css.
+ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbarHeight);
+  z-index: 60;
+  background-color: #FFF;
+
+  /*
+   * quality of life enhancement for logged in admins
+   * not on IE
+   */
+  .logged-in.admin-bar & {
+    top: var(--wp-admin--admin-bar--height);
+  }
+  .primary-menu-item__button {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -11px;
+      background-color: theme(colors.brand.teal);
+      width: calc( 100% + 25px);
+      height: 2px;
+      transform: translateX(-50%);
+      transition: all .3s ease-in-out;
+      opacity: 0;
+    }
+    &.is-open {
+      color: theme(colors.brand.teal);
+      svg.icon-chevron-down-small {
+        transform: rotate(180deg);
+        color: theme(colors.brand.teal);
+      }
+      &::after {
+        @screen lg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .grandchild-menu-trigger {
+    &.is-open {
+      .vertical {
+        height: 0;
+      }
+    }
+    @screen lg {
+      &.is-open {
+        background-color: theme(colors.brand.teal);
+        color: theme(colors.brand.off-white);
+        svg {
+          color: theme(colors.brand.off-white);
+        }
+      }
+    }
+  }
+}
+
+.navbar-toggle {
+  /* Set the width and height of your toggle button and height of the lines and everything else should be calculated accordingly */
+  --toggleWidth: 32px;
+  --toggleHeight: 16px;
+  --lineHeight: 1px;
+  --bottomPosition: calc(var(--toggleHeight) - var(--lineHeight));
+  --middlePosition: calc(var(--bottomPosition) / 2 );
+
+  position: relative;
+  display: inline-block;
+  width: var(--toggleWidth);
+  height: var(--toggleHeight);
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar-toggle.is-open {
+  .navbar-toggle-icon {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      transform-origin: center center;
+    }
+  }
+}
+#mobile-dropdown-menu {
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc( var(--gutter) * 2 );
+  padding-left: calc( var(--gutter) * 2 );
+  overflow: auto;
+
+  @screen lg {
+    overflow: unset;
+    position: unset;
+    margin-right: unset;
+    margin-left: unset;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+#mobile-sticky-buttons {
+
+}
+.navbar-toggle-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: var(--toggleWidth);
+  height: var(--lineHeight);
+  background-color: theme(colors.brand.teal);
+  transition: all 0.15s ease;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: var(--toggleWidth);
+    height: var(--lineHeight);
+    background-color: theme(colors.brand.teal);
+  }
+
+  &::before {
+    top: var(--middlePosition);
+  }
+
+  &::after {
+    top: var(--bottomPosition);
+    transition: all 0.15s ease;
+  }
+}
+

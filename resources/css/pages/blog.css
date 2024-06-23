@@ -1,0 +1,184 @@
+/**
+ * Blog Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the pages
+ *
+ */
+
+.blog {
+
+}
+
+.blog__columns {
+  @apply grid gap-y-8 lg:grid-cols-3 gap-x-gutter-full;
+}
+
+.blog__pagination {
+  @apply flex justify-center mt-16 text-center gap-x-4;
+
+  a,
+  span {
+    @apply inline-block;
+  }
+
+  span,
+  a:hover {
+    @apply underline;
+  }
+}
+
+/*
+ * ------------- POST CARD --------------
+ */
+
+.post__card {
+  @apply flex flex-col h-full;
+  background-color: theme(colors.white);
+
+  .post__read-more-wrapper {
+    @apply mt-auto;
+  }
+  &:hover {
+    .post__read-more-wrapper {
+      background-color: theme(colors.brand.dark-teal);
+    }
+  }
+}
+
+.blog__featured-post .featured-post .post__card {
+  .post-category {
+    display: none;
+  }
+  .post__meta {
+    margin-bottom: 0 !important;
+    margin-top: 1rem;
+    order: 2;
+  }
+  .post__title {
+    order: 1;
+  }
+}
+
+/*
+ * ------------ BLOCKS ---------------
+ */
+
+.blog__block-title {
+  @apply mb-3 underline;
+}
+
+.blog__block-list.categories {
+  a {
+    &:hover {
+      @apply underline;
+    }
+
+    &.is-active {
+      @apply underline;
+    }
+  }
+}
+
+.blog__block-list.tags {
+  @apply flex flex-wrap;
+  gap: 10px;
+
+  a {
+    @apply capitalize rounded-full bg-brand-off-white text-brand-teal;
+    font-size: 10px;
+    padding: 6px 10px;
+    transition: all .3s;
+
+    &:hover {
+      @apply text-white bg-brand-teal;
+      text-decoration: none;
+    }
+  }
+}
+
+.social-share {
+  @apply flex flex-wrap gap-3;
+
+  a,
+  button {
+    @apply inline-block;
+
+    .icon {
+
+    }
+  }
+
+  .social-share__item {
+    @apply relative;
+
+    .copied-text {
+      @apply absolute duration-200 opacity-0 pointer-events-none top-1/2 left-full;
+      transform: translateY(-50%) translateX(0);
+
+      &.is-copied {
+        @apply opacity-100;
+        transform: translateY(-50%) translateX(10px);
+      }
+    }
+  }
+}
+
+/*
+ * ------------- SIDEBAR --------------
+ */
+
+.blog__sidebar-toggle {
+  &.is-open {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+.page-numbers {
+  font-size: 18px;
+  color: theme(colors.brand.gray);
+
+  &.current {
+    color: theme(colors.brand.teal);
+    text-underline-offset: 2px;
+  }
+}
+.blog__sidebar-inner {
+  &.is-open {
+    display: block;
+  }
+}
+
+/*
+ * ------------- SINGLE POST --------------
+ */
+
+.blog-page--single {
+  nav.yoast-breadcrumb {
+    margin: 0;
+  }
+  .blog__sidebar {
+    @apply order-1;
+
+    @screen lg {
+      @apply order-none;
+    }
+  }
+
+  .yoast-breadcrumb__link {
+    @apply text-sm;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+}
+
+.single-post__headings {
+  @apply mb-5 text-center;
+}
+
+.single-post__meta {
+  @apply flex justify-center mb-10 gap-x-3;
+}

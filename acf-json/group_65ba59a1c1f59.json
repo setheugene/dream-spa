@@ -1,0 +1,51 @@
+{
+    "key": "group_65ba59a1c1f59",
+    "title": "Options : Specials",
+    "fields": [
+        {
+            "key": "field_65ba59a1a58dc",
+            "label": "Page For Specials",
+            "name": "page_for_specials",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "After changing this page you must save the permalinks by going to Settings > Permalinks and hitting 'Save Changes' at the bottom of the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "post_type": "",
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "specials-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 0,
+    "modified": 1706794835
+}

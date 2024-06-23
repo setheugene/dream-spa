@@ -1,0 +1,17 @@
+/**
+ * Treatments Archive Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.treatment-archive {
+  .treatment-results,
+  .parent-cat {
+    display: none;
+    &.is-open {
+      display: block;
+    }
+  }
+}

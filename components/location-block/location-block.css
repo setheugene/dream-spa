@@ -1,0 +1,14 @@
+/**
+ * Location Block Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.location-block {
+  background-color: theme(colors.brand.off-white);
+  .location-block__location-card {
+    background-color: theme(colors.brand.teal);
+  }
+}

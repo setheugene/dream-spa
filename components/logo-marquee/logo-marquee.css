@@ -1,0 +1,43 @@
+/**
+ * Logo Marquee Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.logo-marquee {
+  .slick-track {
+    display: flex;
+  }
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+  }
+  .logo-marquee__title {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 130%;
+      background: linear-gradient(90deg, #FFF 68.81%, rgba(255, 255, 255, 0.00) 100%);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: -99vw;
+      top: 0;
+      height: 100%;
+      width: 100vw;
+      background-color: theme(colors.white);
+    }
+  }
+  .slick-list {
+    overflow: visible;
+  }
+}

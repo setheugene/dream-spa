@@ -1,0 +1,61 @@
+.dream-spa__modal {
+  @apply relative w-full max-w-2xl mx-auto bg-white;
+  max-width: 83%;
+  padding: 24px;
+  margin: 24px auto;
+
+  @screen lg {
+    max-width: 77%;
+    margin: 0 auto;
+    padding: 40px;
+  }
+}
+.dream-spa__modal-full-width {
+  @apply relative w-full bg-white;
+  margin: 100px auto;
+  max-width: 100vw;
+  @screen lg {
+    margin: 90px auto;
+    max-width: 95vw;
+  }
+}
+.mfp-zoom-out-cur .mfp-image-holder {
+  button.mfp-close {
+    width: fit-content;
+    cursor: pointer;
+  }
+}
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+
+.mfp-gallery .mfp-content {
+  margin: 100px;
+}

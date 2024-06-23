@@ -1,0 +1,21 @@
+/**
+ * Locations Block Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.locations-block {
+  .marquee-text::after {
+    content: "";
+    position: absolute;
+    right: -26px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: #76CAE8;
+  }
+}

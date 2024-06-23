@@ -1,0 +1,45 @@
+{
+    "key": "group_65ba9b593cd33",
+    "title": "Component : Specials Grid",
+    "fields": [
+        {
+            "key": "field_65ba9b5996eed",
+            "label": "Specials Grid Message",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "message": "This component will automatically pull in all events and sort them from soonest start date to latest start date.\r\nIf the Special date has past, it will not show in the grid.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "component",
+                "operator": "==",
+                "value": "specials-grid"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 1,
+    "modified": 1707746121
+}

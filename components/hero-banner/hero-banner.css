@@ -1,0 +1,16 @@
+/**
+ * Hero Banner Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.hero-banner {
+  .fit-image::before,
+  .loop-video-container::before {
+    content: "";
+    @apply absolute inset-0 z-10 w-full h-full;
+    background: rgba(0, 0, 0, 0.40);
+  }
+}

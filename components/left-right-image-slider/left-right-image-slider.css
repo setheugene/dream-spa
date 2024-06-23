@@ -1,0 +1,15 @@
+/**
+ * Left Right Image Slider Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.left-right-image-slider {
+  .left-right-image-slider__nav-slide {
+    img {
+      object-fit: contain;
+    }
+  }
+}

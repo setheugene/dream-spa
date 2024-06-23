@@ -1,0 +1,66 @@
+{
+    "key": "group_65bbdab5f234f",
+    "title": "Subsites : Treatments",
+    "fields": [
+        {
+            "key": "field_65bbdab64602c",
+            "label": "Related Treatment",
+            "name": "treatment_related_to",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "choices": {
+                "0": "No Related Treatment",
+                "31": "Body treatment",
+                "23": "Botox",
+                "27": "Botox Lip Flip",
+                "32": "Category",
+                "35": "IV Drip",
+                "26": "PRP, PRF &amp; Growth Factors",
+                "25": "Signature Facial Treatment Name",
+                "36": "Treatment Name",
+                "38": "Wellness Grandchild"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "site_type",
+                "operator": "==",
+                "value": "not_main"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "ll_treatment"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 0,
+    "modified": 1706811519
+}

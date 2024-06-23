@@ -1,0 +1,76 @@
+{
+    "key": "group_65b108db95586",
+    "title": "Component : Testimonial Slider",
+    "fields": [
+        {
+            "key": "field_65b108dbc1051",
+            "label": "Introduction Content",
+            "name": "testimonial_slider_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "bg-brand-off-white",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_65b10900c1052",
+            "label": "Featured Testimonials",
+            "name": "testimonial_slider_testimonial_ids",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "All testimonials pull in from the main site.\r\nIf more than three are selected they will be placed in a slider. \r\nIf none are selected the six most recent Testimonials will be automatically pulled into the slider.\r\nHold CMD to select more than one.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "choices": {
+                "572": "Testimonial One",
+                "573": "Testimonial Two",
+                "574": "Testimonial Three",
+                "575": "Testimonial Four"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "component",
+                "operator": "==",
+                "value": "testimonial-slider"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 1,
+    "modified": 1709312530
+}

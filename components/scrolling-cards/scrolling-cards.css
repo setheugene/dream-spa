@@ -1,0 +1,13 @@
+/**
+ * Scrolling Cards Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.scrolling-cards {
+  .scrolling-cards__card {
+    box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.10);
+  }
+}

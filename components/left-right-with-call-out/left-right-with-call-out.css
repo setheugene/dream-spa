@@ -1,0 +1,13 @@
+/**
+ * Left Right with Call Out Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.left-right-with-call-out {
+  .left-right-with-call-out__call-out {
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.10);
+  }
+}

@@ -1,0 +1,21 @@
+/**
+ * Before and After Slider Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.before-and-after-slider {
+  .bag_slide-details {
+    filter: drop-shadow(0px 12px 32px transparent);
+  }
+  .before-after-nav-wrapper button:hover {
+    svg.icon-arrow-left-long {
+      transform: translateX(-8px);
+    }
+    svg.icon-arrow-right-long {
+      transform: translateX(8px);
+    }
+  }
+}

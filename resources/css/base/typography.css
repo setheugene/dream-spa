@@ -1,0 +1,441 @@
+@font-face {
+  font-family: 'Figtree';
+  src: url('../fonts/Figtree-Medium.woff2') format('woff2'),
+      url('../fonts/Figtree-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('../fonts/Figtree-SemiBold.woff2') format('woff2'),
+      url('../fonts/Figtree-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('../fonts/Figtree-Regular.woff2') format('woff2'),
+      url('../fonts/Figtree-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gambetta';
+  src: url('../fonts/Gambetta-Medium.woff2') format('woff2'),
+      url('../fonts/Gambetta-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * Text defaults. Tailwind removes pretty much ALL styling
+ * from default elements to ensure that their utility classes
+ * work as expected. This is a good thing. This means any time
+ * you use an element, whether it's a p tag, li, a tag or a heading, you
+ * need to explicitly set a class on it. This is good for clarity.
+ * The wysiwyg wrapper class below will handle elements from WYSIWYGs
+ * that do not have classes / formats applied. Font sizes are documented here:
+ * https://tailwindcss.com/docs/font-size/#app
+ *
+ * Sizes set here are for example only. Overwrite and add formatting as necessary
+ */
+.hdg-1, .hdg-2, .hdg-3, .hdg-4, .hdg-5, .hdg-6, .paragraph-default, .paragraph-large, .paragraph-small, .paragraph-xsmall {
+}
+
+.hdg-1 {
+  @apply font-serif text-6xl font-medium leading-tight;
+
+  @screen md {
+    @apply text-8xl;
+  }
+}
+
+.hdg-2 {
+  @apply font-serif text-4xl font-medium leading-tight;
+
+  @screen md {
+    @apply text-7xl;
+  }
+}
+
+.hdg-3 {
+  @apply font-serif text-3xl font-medium leading-tight;
+
+  @screen md {
+    @apply text-5xl;
+  }
+}
+
+.hdg-4 {
+  @apply font-serif text-2xl font-medium leading-snug;
+
+  @screen md {
+    @apply text-4xl;
+  }
+}
+
+.hdg-5 {
+  @apply font-sans text-lg font-medium leading-normal;
+
+  @screen md {
+    @apply text-xl;
+  }
+}
+
+.hdg-6 {
+  @apply font-sans text-sm font-normal leading-tight uppercase;
+  letter-spacing: 1.4px;
+}
+
+.paragraph-default {
+  @apply font-sans text-base leading-normal;
+  strong {
+    @apply font-semibold;
+  }
+}
+
+.paragraph-large {
+  @apply font-sans text-lg leading-normal;
+  strong {
+    @apply font-semibold;
+  }
+}
+
+.paragraph-small {
+  @apply font-sans text-sm leading-normal;
+  strong {
+    @apply font-semibold;
+  }
+}
+
+.paragraph-xsmall {
+  @apply font-sans text-xs leading-normal;
+  strong {
+    @apply font-semibold;
+  }
+}
+
+/*
+ * Utility overwrites for automatically changing text colors
+ * based on background color. Will need to add any necessary
+ * possible background colors to the this. This is so that the user
+ * does not have to manually select colors within the WYSIWYG
+ * to fix the color scheme. Example, turning all text white
+ * if there is a black background. Otherwise, they wouldn't be able
+ * to see the text within the wysiwyg.
+ *
+ * Notice that it has classes for targeting the #tinymce.{background-color} for the
+ * backend, and then .{background-color} .wysiwyg for the front end.
+ *
+ * If you have to set default colors for any text classes, then you have
+ * to make these selectors more complex. Using the .hdg-1 color example from above
+ * This targets the normal non text class h1 element, as well as checks for
+ * any text color utilities. This is so the color can still be overwritten as expected
+ * within the WYSIWYG formats
+
+  #tinymce:is(.bg-black),
+  :is(.bg-black) .wysiwyg {
+    :is(h1, h2, h3 ):not([class*="hdg-"], [class*="paragraph-"], [class*="text-brand"], [class*="text-white"], [class*="text-black"]),
+    .hdg-1,
+    .hdg-2,
+    .hdg-3 {
+      color: white;
+    }
+  }
+ */
+#tinymce:is(.bg-brand-dark-teal),
+:is(.bg-brand-dark-teal, .bg-image--overlay-dark) .wysiwyg {
+  background-color: theme(colors.brand.dark-teal);
+  &:not([class*="text-brand"]) {
+    color: theme(colors.white);
+  }
+}
+
+#tinymce:is(.bg-brand-off-white),
+:is(.bg-brand-off-white) .wysiwyg {
+  background-color: theme(colors.brand.off-white);
+  &:not([class*="text-brand"]) {
+    color: theme(colors.brand.gray);
+  }
+  .hdg-1, .hdg-2, .hdg-3, .hdg-4, .hdg-5, h1, h2, h3, h4, h5 {
+    &:not([class*="text-brand"]) {
+      color: theme(colors.brand.navy);
+    }
+  }
+}
+
+#tinymce:is(.bg-white),
+:is(.bg-white) .wysiwyg {
+  background-color: theme(colors.white);
+  &:not([class*="text-brand"]) {
+    color: theme(colors.brand.gray);
+  }
+  .hdg-1, .hdg-2, .hdg-3, .hdg-4, .hdg-5, h1, h2, h3, h4, h5 {
+    &:not([class*="text-brand"]) {
+      color: theme(colors.brand.navy);
+    }
+  }
+}
+
+/*
+ * .wysiwyg is a wrapper class for any content that will be
+ * echoed out via any wysiwyg editor. Be sure to use
+ * @apply {utility-class} when declaring text styles
+ * when possible. #tinymce selector is used to target the body of the
+ * WYSIWYGS on the backend of the site. This should not be targeted in production
+ * on the front end anywhere on the site
+ */
+
+:where(.wysiwyg, #tinymce) {
+  /*
+   * zero out margins for first and
+   * last elements within a WYSIWYG
+   * to remove any unwanted vertical spacing
+   */
+  & > *:first-child {
+    &:not([class*="mt-"]) {
+      margin-top: 0 !important;
+    }
+  }
+
+  & > *:last-child {
+    &:not([class*="mb-"]) {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /*
+   * set defaults to elements in the WYSIWYG that
+   * do not have a style format/class applied to them. Notice that
+   * by default, bottom margins get set. It's best to set bottom margin
+   * rules for the WYSIWYG wrapper and explicitely set bottom margins using
+   * utlities elswhere.
+   */
+  a:not([class*="hdg-"], [class*="paragraph-"], [class*="btn"]) {
+    @apply underline duration-200;
+    &:not([class*="text-brand-"], [class*="text-white"]) {
+      color: theme(colors.brand.gray);
+      &:hover, &:active, &:focus {
+        color: theme(colors.brand.teal);
+      }
+    }
+  }
+
+  :not([class*="hdg-"], [class*="paragraph-"], [class*="gform_"]) {
+    &:where(p) {
+      @extend .paragraph-default;
+    }
+
+    &:where(h1) {
+      @extend .hdg-1;
+    }
+
+    &:where(h2) {
+      @extend .hdg-2;
+    }
+
+    &:where(h3) {
+      @extend .hdg-3;
+    }
+
+    &:where(h4) {
+      @extend .hdg-4;
+    }
+
+    &:where(h5) {
+      @extend .hdg-5;
+    }
+
+    &:where(h6) {
+      @extend .hdg-6;
+    }
+
+    &:where(li) {
+      @extend .paragraph-default;
+    }
+  }
+
+  ul,
+  ol {
+    @apply pl-5 mb-5 ml-5;
+
+    li {
+      &:not(:last-child) {
+        &:not([class*="mb-"]) {
+          @apply mb-2;
+        }
+      }
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+
+    &.list-checklist {
+      list-style: none;
+      margin-left: 10px;
+      li {
+        position: relative;
+        &::before {
+          content: "";
+          background-repeat: no-repeat;
+          background-size: 16px 16px;
+          background-position: center;
+          background-image: url('../../assets/img/checklist-check.svg');
+          position: absolute;
+          left: -28px;
+          top: 3px;
+          height: 16px;
+          width: 16px;
+        }
+        &:not([class*="paragraph-"]) {
+          font-size: 16px;
+        }
+        &:not([class*="text-brand"]) {
+          color: theme(colors.brand.navy);
+        }
+      }
+    }
+  }
+
+  /*
+   * Set default list styles back to disk
+   * and number
+   */
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+
+    li {
+      padding-left: 4px;
+    }
+  }
+
+  /*
+   * If you need to add any extra styling to specific
+   * text classes, add them here. For instance, when coming
+   * from the WYSIWYG, .hdg-1 needs a specific bottom margin
+   * no matter what element it is applied to.
+   */
+  :not([class*="mb-"]) {
+    &:where( .paragraph-default, p ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-hero ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-1, h1 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-2, h2 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-3, h3 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-4, h4 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-5, h5 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-6, h6 ) {
+      @apply mb-5;
+    }
+
+    &:where( .paragraph-large ) {
+      @apply mb-5;
+    }
+
+    &:where( .paragraph-small ) {
+      @apply mb-5;
+    }
+
+    &:where( .paragraph-xsmall ) {
+      @apply mb-5;
+    }
+  }
+
+  address {
+    @extend .paragraph-small;
+    font-style: normal;
+
+    .street,
+    .streetAddress {
+      display: block;
+    }
+
+    .city::after,
+    .addressLocality::after {
+      content: ',';
+    }
+
+    .phone {
+      display: block;
+      @apply mt-2;
+    }
+  }
+
+  blockquote {
+    @apply px-10;
+    p {
+      color: theme(colors.brand.dark-teal);
+      font-size: 18px !important;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+
+  hr {
+    margin: 40px 0;
+    width: 100%;
+    border-color: theme(colors.brand.gray);
+  }
+
+  table {
+    width: 100%;
+    border: 1px solid theme(colors.brand.light-gray);
+
+    tbody {
+      tr:first-of-type {
+        background-color: theme(colors.brand.dark-teal);
+        border: 1px solid theme(colors.brand.dark-teal);
+        color: theme(colors.white);
+        font-weight: theme(fontWeight.semibold);
+
+        td {
+          padding: 16px 24px;
+        }
+      }
+      tr:not(:first-of-type) {
+        background-color: theme(colors.brand.off-white);
+        border: 1px solid theme(colors.brand.logo-blue);
+        color: theme(colors.brand.navy);
+
+        td {
+          padding: 16px 24px;
+          &:not(:last-of-type) {
+            border-right: 1px solid theme(colors.brand.logo-blue);
+          }
+        }
+      }
+    }
+  }
+}

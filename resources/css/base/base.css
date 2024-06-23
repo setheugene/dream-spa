@@ -1,0 +1,26 @@
+* {
+  scroll-margin: var(--topOffset);
+  scroll-behavior: smooth;
+}
+
+body:not(.component-preview) {
+  padding-top: var(--topOffset);
+  position: relative;
+  @apply font-sans text-brand-dark-gray;
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+a {
+  transition: all 0.15s ease-in-out;
+
+  &:hover, &:active, &:focus {
+    transition: all 0.15s ease-in-out;
+  }
+}

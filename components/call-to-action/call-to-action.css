@@ -1,0 +1,53 @@
+/**
+ * Call To Action Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.call-to-action {
+  .call-to-action__white-gradient {
+    position: relative;
+    z-index: 20;
+    margin-top: -150px;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0.00) 0%, #F9F9F9 100%);
+
+    @screen lg {
+      margin-top: -360px;
+      height: 360px;
+    }
+  }
+  .call-to-action__full-image .fit-image,
+  .call-to-action__wave-graphic {
+    &::before {
+      content: "";
+      right: -2px;
+      top: 0;
+      position: absolute;
+      height: 100%;
+      width: 100px;
+      background: linear-gradient(to right, rgba(249, 249, 249, 0.00) 0%, #F9F9F9 100%);
+      display: none;
+    }
+    &::after {
+      content: "";
+      left: -2px;
+      top: 0;
+      position: absolute;
+      height: 100%;
+      width: 100px;
+      background: linear-gradient(to left, rgba(249, 249, 249, 0.00) 0%, #F9F9F9 100%);
+      display: none;
+    }
+
+    @screen xxl {
+      &::after,
+      &::before {
+        display: block
+      }
+    }
+  }
+}

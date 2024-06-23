@@ -1,0 +1,75 @@
+{
+    "key": "group_65bcf4a182afd",
+    "title": "Categories : Treatment",
+    "fields": [
+        {
+            "key": "field_65bcf57bf3423",
+            "label": "Icon",
+            "name": "treatment_cat_icon",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "Use this on Parent categories and it will show in the treatment archive.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "clone": [
+                "group_5f61b85acaa5a"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_65ca169cf83e1",
+            "label": "Category Title",
+            "name": "treatment_cat_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "site_type",
+                "operator": "==",
+                "value": "main"
+            },
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "ll_treatment_category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 0,
+    "modified": 1707742903
+}

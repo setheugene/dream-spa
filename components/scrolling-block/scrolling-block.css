@@ -1,0 +1,23 @@
+/**
+ * Scrolling Block Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.scrolling-block {
+  .scrolling-block__content-block:not([data-step="1"]) {
+    @screen lg {
+      opacity: 0.3;
+    }
+  }
+
+  .scrolling-block__image {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+
+    &.scrolling-block-image-1 {
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    }
+  }
+}
